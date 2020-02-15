@@ -52,4 +52,12 @@ public class Bilutleigeselskap {
     public void setFirmaAdresse(Adresse firmaAdresse) {
         this.firmaAdresse = firmaAdresse;
     }
+
+    public List<Utleigekontor> getKontor() {
+        return kontor;
+    }
+
+    public void setKontor(List<Utleigekontor> kontor) {
+        this.kontor = kontor;
+    }
 }

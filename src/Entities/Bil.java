@@ -11,6 +11,7 @@ public class Bil {
     private long regnr;
     private Utleigekontor lokasjon;
     private boolean ledig;
+    private int dagspris;
 
     /**
      * Constructor Bil
@@ -21,16 +22,16 @@ public class Bil {
      * @param regnr
      * @param lokasjon
      */
-    public Bil(String bilMerke, String modell, String farge, String klasse, long regnr, Utleigekontor lokasjon) {
+    public Bil(String bilMerke, String modell, String farge, String klasse, long regnr, Utleigekontor lokasjon, int dagspris) {
         this.bilMerke = bilMerke;
         this.modell = modell;
         this.farge = farge;
         this.klasse = klasse;
         this.regnr = regnr;
         this.lokasjon = lokasjon;
+        this.dagspris = dagspris;
         this.ledig = false;
     }
-
 
     /**
      * Getter & Setter
@@ -90,5 +91,13 @@ public class Bil {
 
     public void setLedig(boolean ledig) {
         this.ledig = ledig;
+    }
+
+    public int getDagspris() {
+        return dagspris;
+    }
+
+    public void setDagspris(int dagspris) {
+        this.dagspris = dagspris;
     }
 }
