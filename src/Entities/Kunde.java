@@ -8,6 +8,13 @@ public class Kunde {
     private String etternavn;
     private Adresse adresse;
     private long telefon;
+    private Leigeforhold leigeforhold;
+
+    /**
+     * Constructor Kunde Empty
+     */
+    public Kunde() {
+    }
 
     /**
      * Constructor Kunde

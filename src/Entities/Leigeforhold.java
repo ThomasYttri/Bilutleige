@@ -2,7 +2,6 @@ package Entities;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -22,6 +21,20 @@ public class Leigeforhold {
     private int ordrenr;
 
     /**
+     * Constructor Leigeforhold Empty
+     */
+    public Leigeforhold(){
+        this.pris = 0;
+        this.varighet = 0;
+        this.start = null;
+        this.slutt = null;
+        this.leigekontor = null;
+        this.returkontor = null;
+        this.kunde = null;
+        this.bil = null;
+        this.ordrenr = teller.incrementAndGet();
+    }
+    /**
      * Constructor Leigeforhold
      * @param start
      * @param slutt
@@ -40,6 +53,82 @@ public class Leigeforhold {
         this.ordrenr = teller.incrementAndGet();
         this.varighet = finnVarighet();
         this.pris = finnPris();
+    }
+
+    public int getPris() {
+        return pris;
+    }
+
+    public void setPris(int pris) {
+        this.pris = pris;
+    }
+
+    public int getVarighet() {
+        return varighet;
+    }
+
+    public void setVarighet(int varighet) {
+        this.varighet = varighet;
+    }
+
+    public LocalDate getStart() {
+        return start;
+    }
+
+    public void setStart(LocalDate start) {
+        this.start = start;
+    }
+
+    public LocalDate getSlutt() {
+        return slutt;
+    }
+
+    public void setSlutt(LocalDate slutt) {
+        this.slutt = slutt;
+    }
+
+    public Utleigekontor getLeigekontor() {
+        return leigekontor;
+    }
+
+    public void setLeigekontor(Utleigekontor leigekontor) {
+        this.leigekontor = leigekontor;
+    }
+
+    public Utleigekontor getReturkontor() {
+        return returkontor;
+    }
+
+    public void setReturkontor(Utleigekontor returkontor) {
+        this.returkontor = returkontor;
+    }
+
+    public Kunde getKunde() {
+        return kunde;
+    }
+
+    public void setKunde(Kunde kunde) {
+        this.kunde = kunde;
+    }
+
+    public Bil getBil() {
+        return bil;
+    }
+
+    public void setBil(Bil bil) {
+        this.bil = bil;
+    }
+
+    public static AtomicInteger getTeller() {
+        return teller;
+    }
+
+    public int getOrdrenr() {
+        return ordrenr;
+    }
+
+    public void setOrdrenr(int ordrenr) {
+        this.ordrenr = ordrenr;
     }
 
     /**
@@ -62,5 +151,12 @@ public class Leigeforhold {
             pris += AVGIFT;
         }
         return pris;
+    }
+
+    public boolean sjekkDato(LocalDate startdato, LocalDate sluttdato) {
+        if (startdato.isBefore(sluttdato) && startdato.isAfter(LocalDate.now())){
+            return true;
+        }
+        return false;
     }
 }

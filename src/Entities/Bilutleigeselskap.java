@@ -10,7 +10,8 @@ public class Bilutleigeselskap {
     private String navn;
     private long telefon;
     private Adresse firmaAdresse;
-    private List<Utleigekontor> kontor;
+    private List<Utleigekontor> kontorListe;
+    private List<Leigeforhold> leigeforhold;
 
     /**
      * Constructor Bilutleigeselskap
@@ -22,12 +23,34 @@ public class Bilutleigeselskap {
         this.navn = navn;
         this.telefon = telefon;
         this.firmaAdresse = firmaAdresse;
-        this.kontor = new ArrayList<>();
+        this.kontorListe = new ArrayList<>();
+        this.leigeforhold = new ArrayList<>();
     }
 
     /**
      * Getters and Setters
      *
      */
+    public List<Utleigekontor> getKontor() {
+        return kontorListe;
+    }
 
+    /**
+     *
+     * @return
+     */
+    public Utleigekontor kontorBy(String str){
+        for(Utleigekontor kontor : kontorListe){
+            if (kontor.getAdresse().getPoststed().equals(str)){
+                return kontor;
+            }
+        }
+        return null;
+    }
+
+    public void kontorToString() {
+        for (Utleigekontor kontor : kontorListe) {
+            kontor.getAdresse().getPoststed().toString();
+        }
+    }
 }
