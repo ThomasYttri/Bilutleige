@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4521443b-d8ed-418a-994f-a51d6931350f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entities/Adresse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entities/Bil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entities/Bilutleigeselskap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entities/Kunde.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entities/Utleigekontor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Utleigekontor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Utleigekontor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,24 +106,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Entities/Utleigekontor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+            <state relative-caret-position="330">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entities/Bilutleigeselskap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="36" />
+            <state relative-caret-position="504">
+              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#547#548#0" expanded="true" />
                 <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
                 <element signature="e#646#647#0" expanded="true" />
                 <element signature="e#678#679#0" expanded="true" />
                 <element signature="e#708#709#0" expanded="true" />
@@ -161,8 +159,8 @@
         <option value="$PROJECT_DIR$/src/Entities/Bil.java" />
         <option value="$PROJECT_DIR$/src/Entities/Adresse.java" />
         <option value="$PROJECT_DIR$/src/Entities/Kunde.java" />
-        <option value="$PROJECT_DIR$/src/Entities/Utleigekontor.java" />
         <option value="$PROJECT_DIR$/src/Entities/Bilutleigeselskap.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Utleigekontor.java" />
       </list>
     </option>
   </component>
@@ -237,12 +235,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581712339517</updated>
-      <workItem from="1581712342460" duration="3264000" />
+      <workItem from="1581712342460" duration="4521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3264000" />
+    <option name="totallyTimeSpent" value="4521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="818" extended-state="6" />
@@ -365,21 +363,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entities/Utleigekontor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Bilutleigeselskap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="504">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#547#548#0" expanded="true" />
             <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
             <element signature="e#646#647#0" expanded="true" />
             <element signature="e#678#679#0" expanded="true" />
             <element signature="e#708#709#0" expanded="true" />
@@ -389,6 +380,16 @@
             <element signature="e#865#866#0" expanded="true" />
             <element signature="e#922#923#0" expanded="true" />
             <element signature="e#970#971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/Utleigekontor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
