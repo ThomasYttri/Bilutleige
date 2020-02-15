@@ -29,35 +29,5 @@ public class Bilutleigeselskap {
      * Getters and Setters
      *
      */
-    public String getNavn() {
-        return navn;
-    }
 
-    public void setNavn(String navn) {
-        this.navn = navn;
-    }
-
-    public long getTelefon() {
-        return telefon;
-    }
-
-    public void setTelefon(long telefon) {
-        this.telefon = telefon;
-    }
-
-    public Adresse getFirmaAdresse() {
-        return firmaAdresse;
-    }
-
-    public void setFirmaAdresse(Adresse firmaAdresse) {
-        this.firmaAdresse = firmaAdresse;
-    }
-
-    public List<Utleigekontor> getKontor() {
-        return kontor;
-    }
-
-    public void setKontor(List<Utleigekontor> kontor) {
-        this.kontor = kontor;
-    }
 }

@@ -27,35 +27,5 @@ public class Kunde {
      * Getters and Setters
      *
      */
-    public String getFornavn() {
-        return fornavn;
-    }
 
-    public void setFornavn(String fornavn) {
-        this.fornavn = fornavn;
-    }
-
-    public String getEtternavn() {
-        return etternavn;
-    }
-
-    public void setEtternavn(String etternavn) {
-        this.etternavn = etternavn;
-    }
-
-    public Adresse getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
-    }
-
-    public long getTelefon() {
-        return telefon;
-    }
-
-    public void setTelefon(long telefon) {
-        this.telefon = telefon;
-    }
 }

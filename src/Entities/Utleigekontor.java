@@ -25,4 +25,28 @@ public class Utleigekontor{
         this.telefon = telefon;
         this.biler = new ArrayList<>();
     }
+
+    public void kerk(){
+        //Sjekke om bil er tilgjengelig på gitt kontor
+        //sjekke om bil er tilgjengelig fra start dato
+        //Sjekke om bil er tilgjengelig heilt til slutt dato
+        //Opprette leigeforhold
+        //Opprette faktura?
+    }
+
+    /**
+     * retur - Legger bil til i liste over biler
+     * @param bil
+     */
+    public void retur(Bil bil){
+        this.biler.add(bil);
+    }
+
+    /**
+     * utleie - Fjerner bil fra liste over biler
+     * @param bil
+     */
+    public void utleige(Bil bil){
+        this.biler.remove(bil);
+    }
 }
