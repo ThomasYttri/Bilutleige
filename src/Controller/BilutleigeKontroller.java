@@ -51,15 +51,22 @@ public class BilutleigeKontroller {
         //Retur dato
         System.out.println("Dato for retur av bil, skrives i formatet: dd mm yyyy");
         LocalDate sluttdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+        while (sluttdato.isBefore(startdato)){
+            System.out.println("Datoen er før startdato, prøv igjen.");
+            LocalDate nysluttdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
+            sluttdato = nysluttdato;
+        }
 
         //Sjekk dato og legg til
         if (leigeforhold.sjekkDato(startdato, sluttdato)){
             leigeforhold.setStart(startdato);
             leigeforhold.setSlutt(sluttdato);
         } else {
-            System.out.println("Feil i dato, prøv igjen");
-            
+            System.out.println("Feil i dato");
         }
+
+        //Sjekk ledige biler og velg bil
+
     }
 
 }

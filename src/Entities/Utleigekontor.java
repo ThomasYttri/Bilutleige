@@ -1,5 +1,6 @@
 package Entities;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -76,5 +77,4 @@ public class Utleigekontor{
     public void utleige(Bil bil){
         this.biler.remove(bil);
     }
-
 }

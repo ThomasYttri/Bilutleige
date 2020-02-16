@@ -37,6 +37,66 @@ public class Bil {
      * Getter & Setter
      *
      */
+    public String getBilMerke() {
+        return bilMerke;
+    }
+
+    public void setBilMerke(String bilMerke) {
+        this.bilMerke = bilMerke;
+    }
+
+    public String getModell() {
+        return modell;
+    }
+
+    public void setModell(String modell) {
+        this.modell = modell;
+    }
+
+    public String getFarge() {
+        return farge;
+    }
+
+    public void setFarge(String farge) {
+        this.farge = farge;
+    }
+
+    public String getKlasse() {
+        return klasse;
+    }
+
+    public void setKlasse(String klasse) {
+        this.klasse = klasse;
+    }
+
+    public long getRegnr() {
+        return regnr;
+    }
+
+    public void setRegnr(long regnr) {
+        this.regnr = regnr;
+    }
+
+    public Utleigekontor getLokasjon() {
+        return lokasjon;
+    }
+
+    public void setLokasjon(Utleigekontor lokasjon) {
+        this.lokasjon = lokasjon;
+    }
+
+    public boolean isLedig() {
+        return ledig;
+    }
+
+    public void setLedig(boolean ledig) {
+        this.ledig = ledig;
+    }
+
+    public void setDagspris(int dagspris) {
+        this.dagspris = dagspris;
+    }
+
     public int getDagspris() {
         return dagspris;
     }
