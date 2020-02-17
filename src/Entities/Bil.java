@@ -1,5 +1,7 @@
 package Entities;
 
+import java.time.LocalDate;
+
 /**
  * @Author Thomas V.Yttri
  */
@@ -8,7 +10,7 @@ public class Bil {
     private String modell;
     private String farge;
     private String klasse;
-    private long regnr;
+    private String regnr;
     private Utleigekontor lokasjon;
     private boolean ledig;
     private int dagspris;
@@ -22,7 +24,7 @@ public class Bil {
      * @param regnr
      * @param lokasjon
      */
-    public Bil(String bilMerke, String modell, String farge, String klasse, long regnr, Utleigekontor lokasjon, int dagspris) {
+    public Bil(String bilMerke, String modell, String farge, String klasse, String regnr, Utleigekontor lokasjon, int dagspris) {
         this.bilMerke = bilMerke;
         this.modell = modell;
         this.farge = farge;
@@ -30,7 +32,6 @@ public class Bil {
         this.regnr = regnr;
         this.lokasjon = lokasjon;
         this.dagspris = dagspris;
-        this.ledig = false;
     }
 
     /**
@@ -69,11 +70,11 @@ public class Bil {
         this.klasse = klasse;
     }
 
-    public long getRegnr() {
+    public String getRegnr() {
         return regnr;
     }
 
-    public void setRegnr(long regnr) {
+    public void setRegnr(String regnr) {
         this.regnr = regnr;
     }
 
@@ -100,4 +101,22 @@ public class Bil {
     public int getDagspris() {
         return dagspris;
     }
+
+    @Override
+    public String toString(){
+        return ("Merke: " + bilMerke + " " + "Modell: " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
+    }
+
+    /*
+    public boolean isLedig(Bilutleigeselskap bilutleigeselskap, LocalDate start, LocalDate slutt){
+        for (Leigeforhold leigeforhold : bilutleigeselskap.getLeigeforhold()) {
+            if (leigeforhold.getBil().getRegnr() == this.regnr) {
+                if (leigeforhold.getStart().isAfter(slutt) || leigeforhold.getSlutt().isBefore(start)){
+                    return true;
+                }
+            }
+        }
+    }
+    
+     */
 }

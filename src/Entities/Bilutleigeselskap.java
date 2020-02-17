@@ -37,6 +37,10 @@ public class Bilutleigeselskap {
         return kontorListe;
     }
 
+    public List<Leigeforhold> getLeigeforhold() {
+        return leigeforhold;
+    }
+
     /**
      * kontorBy - Retunereer kontor med lik poststed, om ikkje finnes retuneres null
      * @return kontor
@@ -68,9 +72,9 @@ public class Bilutleigeselskap {
      */
     public List<Bil> ledigeBiler(Utleigekontor utleigekontor, LocalDate start, LocalDate slutt) {
         List<Bil> ledigeBiler = new ArrayList<>();
-        List<Bil> bilerVedKontor = utleigekontor.getBiler().stream()
-                .filter(b -> b.getLokasjon().equals(utleigekontor))
-                .collect(Collectors.toList());
+
+        //Biler ved kontoret
+        List<Bil> bilerVedKontor = utleigekontor.getBiler();
 
         // TODO: 2020-02-16
         // CLUSTErFUK
@@ -94,8 +98,9 @@ public class Bilutleigeselskap {
      * @param biler
      */
     public void bilerToString(List<Bil> biler) {
-        for (Bil bil : biler){
-            bil.toString();
-        }
+        biler.stream()
+                .forEach(b -> b.toString());
     }
+
+
 }

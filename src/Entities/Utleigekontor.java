@@ -77,4 +77,6 @@ public class Utleigekontor{
     public void utleige(Bil bil){
         this.biler.remove(bil);
     }
+
+
 }

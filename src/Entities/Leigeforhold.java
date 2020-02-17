@@ -21,20 +21,6 @@ public class Leigeforhold {
     private int ordrenr;
 
     /**
-     * Constructor Leigeforhold Empty
-     */
-    public Leigeforhold(){
-        this.pris = 0;
-        this.varighet = 0;
-        this.start = null;
-        this.slutt = null;
-        this.leigekontor = null;
-        this.returkontor = null;
-        this.kunde = null;
-        this.bil = null;
-        this.ordrenr = teller.incrementAndGet();
-    }
-    /**
      * Constructor Leigeforhold
      * @param start
      * @param slutt
