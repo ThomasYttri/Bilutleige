@@ -24,6 +24,7 @@ public class BilutleigeKontroller {
     public void start(){
         Scanner scanner = new Scanner(System.in);
         Kunde kunde = new Kunde();
+        Leigeforhold leigeforhold = new Leigeforhold();
 
         //Velge kontor
         List<Utleigekontor> utleigekontor = bilutleigeselskap.getKontor();
@@ -61,7 +62,7 @@ public class BilutleigeKontroller {
         System.out.println("Velg ønsket bil ved å skrive regnr.");
         String regnr = scanner.next();
         Bil leigebil = null;
-        while (leigebil != null) {
+        while (leigebil == null) {
             if (regnr != null) {
                 for (Bil bil : ledigeBiler) {
                     if (bil.getRegnr().equals(regnr)) {
@@ -74,10 +75,40 @@ public class BilutleigeKontroller {
         }
 
         //Kunde navn og etternavn
+        //Fornavn
+        System.out.println("Skriv ditt fornavn");
+        String fornavn = scanner.next();
 
+        //Etternavn
+        System.out.println("Skriv ditt etternavn");
+        String etternavn = scanner.next();
 
+        //Telefonnummer
+        System.out.println("Skriv ditt telefonnummer");
+        long nr = scanner.nextLong();
+
+        //Adresse
+        System.out.println("Skriv din addresse");
+
+        System.out.println("Gateaddresse:");
+        String gate = scanner.nextLine();
+
+        System.out.println("Postnummer og poststed, format 5555 Olaby");
+        int postnr = scanner.nextInt();
+        String poststed = scanner.next();
+        Adresse adresse = new Adresse(gate, postnr, poststed);
+
+        kunde = new Kunde(fornavn, etternavn, adresse, nr);
+        Bil bil = startKontor.getBilbyRegnr(regnr);
+        leigeforhold = new Leigeforhold(startdato, sluttdato, startKontor, sluttKontor, kunde, bil);
         bilutleigeselskap.getLeigeforhold().add(new Leigeforhold(startdato, sluttdato, startKontor, sluttKontor, kunde, leigebil));
+        System.out.println("Takk for din bestilling! Ditt referansenr er: " + leigeforhold.getOrdrenr());
 
+
+    }
+
+    public void regKontor(Utleigekontor kontor){
+        bilutleigeselskap.getKontor().add(kontor);
     }
 
 }

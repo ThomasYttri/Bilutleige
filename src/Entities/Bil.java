@@ -1,6 +1,7 @@
 package Entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @Author Thomas V.Yttri
@@ -107,16 +108,22 @@ public class Bil {
         return ("Merke: " + bilMerke + " " + "Modell: " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
     }
 
-    /*
+    /**
+     * isLedig - Retunerer true om bilen er ledig i gitt tidsrom
+     * @param bilutleigeselskap
+     * @param start
+     * @param slutt
+     * @return boolean
+     */
     public boolean isLedig(Bilutleigeselskap bilutleigeselskap, LocalDate start, LocalDate slutt){
         for (Leigeforhold leigeforhold : bilutleigeselskap.getLeigeforhold()) {
             if (leigeforhold.getBil().getRegnr() == this.regnr) {
-                if (leigeforhold.getStart().isAfter(slutt) || leigeforhold.getSlutt().isBefore(start)){
-                    return true;
+                if (start.isBefore(leigeforhold.getSlutt()) && slutt.isAfter(leigeforhold.getStart())){
+                    return false;
                 }
             }
         }
+        return true;
     }
-    
-     */
+
 }

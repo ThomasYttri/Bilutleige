@@ -8,7 +8,7 @@ public class Kunde {
     private String etternavn;
     private Adresse adresse;
     private long telefon;
-    private Leigeforhold leigeforhold;
+    private Faktura faktura;
 
     /**
      * Constructor Kunde Empty
@@ -34,5 +34,13 @@ public class Kunde {
      * Getters and Setters
      *
      */
+
+    public void setFaktura(Leigeforhold leigeforhold) {
+        this.faktura = new Faktura(leigeforhold);
+    }
+
+    public void getFaktura(){
+        this.faktura.printFaktura();
+    }
 
 }

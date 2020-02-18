@@ -58,6 +58,15 @@ public class Utleigekontor{
         return biler;
     }
 
+    public Bil getBilbyRegnr (String regnr) {
+        for (Bil bil : biler) {
+            if (bil.getRegnr().equals(regnr)) {
+                return bil;
+            }
+        }
+        return null;
+    }
+
     public void setBiler(List<Bil> biler) {
         this.biler = biler;
     }

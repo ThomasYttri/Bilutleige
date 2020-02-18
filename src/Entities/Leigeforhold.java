@@ -21,6 +21,12 @@ public class Leigeforhold {
     private int ordrenr;
 
     /**
+     * Constructor Leigeforhold - Empty
+     */
+    public Leigeforhold(){
+        this.ordrenr = teller.incrementAndGet();
+    }
+    /**
      * Constructor Leigeforhold
      * @param start
      * @param slutt
@@ -132,7 +138,7 @@ public class Leigeforhold {
      * @return pris
      */
     public int finnPris(){
-        pris = bil.getDagspris() * varighet;
+        pris = this.bil.getDagspris() * finnVarighet();
         if (leigekontor != returkontor){
             pris += AVGIFT;
         }

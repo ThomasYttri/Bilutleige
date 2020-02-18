@@ -41,6 +41,10 @@ public class Bilutleigeselskap {
         return leigeforhold;
     }
 
+    public void setKontorListe(List<Utleigekontor> kontorListe){
+        this.kontorListe = kontorListe;
+    }
+
     /**
      * kontorBy - Retunereer kontor med lik poststed, om ikkje finnes retuneres null
      * @return kontor
@@ -98,8 +102,7 @@ public class Bilutleigeselskap {
      * @param biler
      */
     public void bilerToString(List<Bil> biler) {
-        biler.stream()
-                .forEach(b -> b.toString());
+        biler.forEach(b -> b.toString());
     }
 
 
