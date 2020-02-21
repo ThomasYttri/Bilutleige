@@ -62,7 +62,7 @@ public class Bilutleigeselskap {
      */
     public void kontorToString() {
         for (Utleigekontor kontor : kontorListe) {
-            kontor.getAdresse().getPoststed();
+            System.out.println(kontor.getAdresse().getPoststed());
         }
     }
 
@@ -89,9 +89,30 @@ public class Bilutleigeselskap {
      * bilerToString - Skriver ut alle biler i gitt liste
      * @param biler
      */
-    public void bilerToString(List<Bil> biler) {
-        biler.forEach(b -> b.toString());
+    public void printBiler(List<Bil> biler) {
+       for(Bil bil : biler) {
+           System.out.println(bil.toString());
+       }
     }
 
+    /**
+     * bilByReg - Returnerer bil med gitt regnr i gitt liste av biler
+     * @param ledigeBiler
+     * @param regnr
+     * @return bil
+     */
+    public Bil bilByReg(List<Bil> ledigeBiler, String regnr) {
+        for (Bil bil : ledigeBiler) {
+            if (bil.getRegnr().equals(regnr)) {
+                return bil;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString(){
+        return (navn + "\n" + firmaAdresse + "\n" + telefon);
+    }
 
 }

@@ -1,6 +1,5 @@
 package Entities;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -34,43 +33,12 @@ public class Utleigekontor{
         return kontornummer;
     }
 
-    public void setKontornummer(int kontornummer) {
-        this.kontornummer = kontornummer;
-    }
-
     public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
-    }
-
-    public long getTelefon() {
-        return telefon;
-    }
-
-    public void setTelefon(long telefon) {
-        this.telefon = telefon;
-    }
-
-
-
     public List<Bil> getBiler() {
         return biler;
-    }
-
-    public Bil getBilbyRegnr (String regnr) {
-        for (Bil bil : biler) {
-            if (bil.getRegnr().equals(regnr)) {
-                return bil;
-            }
-        }
-        return null;
-    }
-
-    public void setBiler(List<Bil> biler) {
-        this.biler = biler;
     }
 
     /**
@@ -88,6 +56,4 @@ public class Utleigekontor{
     public void utleige(Bil bil){
         this.biler.remove(bil);
     }
-
-
 }

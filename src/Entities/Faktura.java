@@ -5,17 +5,19 @@ package Entities;
  */
 public class Faktura {
     private Leigeforhold leigeforhold;
+    private Bilutleigeselskap bilutleigeselskap;
 
-    public Faktura (Leigeforhold leigeforhold) {
+    public Faktura (Leigeforhold leigeforhold, Bilutleigeselskap bilutleigeselskap) {
         this.leigeforhold = leigeforhold;
+        this.bilutleigeselskap = bilutleigeselskap;
     }
 
     public void printFaktura() {
-        System.out.println("******** FAKTURA ********");
-        System.out.println("Betalt av: " + leigeforhold.getKunde().toString());
-        System.out.println("Betalet til: " + leigeforhold.getLeigekontor().getAdresse());
-        System.out.println("Referansenr leigeforhold: " + leigeforhold.getOrdrenr());
-        System.out.println("Kontonr: " + leigeforhold.getLeigekontor().getKontornummer());
-        System.out.println("Sum: " + leigeforhold.getPris());
+        System.out.println("******** FAKTURA ********" + "\n");
+        System.out.println("Betalt av:" + "\n" + leigeforhold.getKunde().toString());
+        System.out.println("\n" + "__________________________" + "\n");
+        System.out.println("Betalt til:" + "\n" + bilutleigeselskap.toString());
+        System.out.println("\n" + "__________________________" + "\n");
+        System.out.println("SUM Å BETALE " + leigeforhold.getPris());
     }
 }

@@ -50,7 +50,7 @@ public class Bil {
 
     @Override
     public String toString(){
-        return ("Merke: " + bilMerke + " " + "Modell: " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
+        return ("Bil: " + bilMerke + " " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
     }
 
     /**

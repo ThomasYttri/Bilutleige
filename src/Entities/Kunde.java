@@ -36,12 +36,16 @@ public class Kunde {
      *
      */
 
-    public void setFaktura(Leigeforhold leigeforhold) {
-        this.faktura = new Faktura(leigeforhold);
+    public void setFaktura(Faktura faktura) {
+        this.faktura = faktura;
     }
 
     public Faktura getFaktura(){
         return this.faktura;
     }
 
+    @Override
+    public String toString(){
+        return (fornavn + " " + etternavn + "\n" +  telefon + "\n" + adresse.toString());
+    }
 }
