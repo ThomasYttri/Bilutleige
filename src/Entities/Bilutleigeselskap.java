@@ -3,7 +3,6 @@ package Entities;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @Author Thomas V.Yttri
@@ -63,7 +62,7 @@ public class Bilutleigeselskap {
      */
     public void kontorToString() {
         for (Utleigekontor kontor : kontorListe) {
-            kontor.getAdresse().getPoststed().toString();
+            kontor.getAdresse().getPoststed();
         }
     }
 
@@ -77,21 +76,10 @@ public class Bilutleigeselskap {
     public List<Bil> ledigeBiler(Utleigekontor utleigekontor, LocalDate start, LocalDate slutt) {
         List<Bil> ledigeBiler = new ArrayList<>();
 
-        //Biler ved kontoret
-        List<Bil> bilerVedKontor = utleigekontor.getBiler();
-
-        // TODO: 2020-02-16
-        // CLUSTErFUK
-        //Biler som er ved kontor og ikkje utleigd
-        for(Bil bil : bilerVedKontor) {
-            for(Leigeforhold leigeforhold : leigeforhold) {
-                if (leigeforhold.getBil().equals(bil)) {
-                    if (leigeforhold.getSlutt().isBefore(start) || leigeforhold.getStart().isAfter(slutt)) {
-                        ledigeBiler.add(leigeforhold.getBil());
-                    }
-                } else {
-                    ledigeBiler.add(leigeforhold.getBil());
-                }
+        //For alle biler ved utleigekontor, om den er ledig legg til i liste over ledige biler
+        for(Bil bil : utleigekontor.getBiler()) {
+            if(bil.isLedig(this.leigeforhold, start, slutt)){
+                ledigeBiler.add(bil);
             }
         }
         return ledigeBiler;

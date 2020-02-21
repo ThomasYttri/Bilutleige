@@ -12,7 +12,8 @@ public class Faktura {
 
     public void printFaktura() {
         System.out.println("******** FAKTURA ********");
-        System.out.println("Mottaker: " + leigeforhold.getLeigekontor().getAdresse());
+        System.out.println("Betalt av: " + leigeforhold.getKunde().toString());
+        System.out.println("Betalet til: " + leigeforhold.getLeigekontor().getAdresse());
         System.out.println("Referansenr leigeforhold: " + leigeforhold.getOrdrenr());
         System.out.println("Kontonr: " + leigeforhold.getLeigekontor().getKontornummer());
         System.out.println("Sum: " + leigeforhold.getPris());

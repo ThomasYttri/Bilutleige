@@ -9,6 +9,7 @@ public class Kunde {
     private Adresse adresse;
     private long telefon;
     private Faktura faktura;
+    private Long kortnummer;
 
     /**
      * Constructor Kunde Empty
@@ -39,8 +40,8 @@ public class Kunde {
         this.faktura = new Faktura(leigeforhold);
     }
 
-    public void getFaktura(){
-        this.faktura.printFaktura();
+    public Faktura getFaktura(){
+        return this.faktura;
     }
 
 }

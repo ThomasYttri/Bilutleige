@@ -21,7 +21,7 @@ public class BilutleigeKontroller {
         this.bilutleigeselskap = bilutleigeselskap;
     }
 
-    public void start(){
+    public void start() {
         Scanner scanner = new Scanner(System.in);
         Kunde kunde = new Kunde();
         Leigeforhold leigeforhold = new Leigeforhold();
@@ -39,16 +39,16 @@ public class BilutleigeKontroller {
         //Hente dato
         System.out.println("Dato for henting av bil, skrives i formatet: yyyy mm dd");
         LocalDate startdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-        while (startdato.isBefore(LocalDate.now())){
+        while (startdato.isBefore(LocalDate.now())) {
             System.out.println("Datoen er før dagens dato, prøv igjen");
             startdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         }
 
-        
+
         //Retur dato
         System.out.println("Dato for retur av bil, skrives i formatet: dd mm yyyy");
         LocalDate sluttdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
-        while (sluttdato.isBefore(startdato)){
+        while (sluttdato.isBefore(startdato)) {
             System.out.println("Datoen er før startdato, prøv igjen.");
             sluttdato = LocalDate.of(scanner.nextInt(), scanner.nextInt(), scanner.nextInt());
         }
@@ -98,17 +98,20 @@ public class BilutleigeKontroller {
         String poststed = scanner.next();
         Adresse adresse = new Adresse(gate, postnr, poststed);
 
+        //Kortnummer
+        System.out.println("Kortnummer:");
+        long kortnummer = scanner.nextLong();
+
+
         kunde = new Kunde(fornavn, etternavn, adresse, nr);
         Bil bil = startKontor.getBilbyRegnr(regnr);
         leigeforhold = new Leigeforhold(startdato, sluttdato, startKontor, sluttKontor, kunde, bil);
         bilutleigeselskap.getLeigeforhold().add(new Leigeforhold(startdato, sluttdato, startKontor, sluttKontor, kunde, leigebil));
+        kunde.setFaktura(leigeforhold);
         System.out.println("Takk for din bestilling! Ditt referansenr er: " + leigeforhold.getOrdrenr());
+        System.out.println("Din faktura: ");
+        kunde.getFaktura().printFaktura();
 
 
     }
-
-    public void regKontor(Utleigekontor kontor){
-        bilutleigeselskap.getKontor().add(kontor);
-    }
-
 }
