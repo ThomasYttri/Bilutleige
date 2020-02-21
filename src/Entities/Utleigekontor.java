@@ -54,6 +54,8 @@ public class Utleigekontor{
         this.telefon = telefon;
     }
 
+
+
     public List<Bil> getBiler() {
         return biler;
     }
