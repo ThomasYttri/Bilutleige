@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * @Author Thomas V.Yttri
  */
-public class Utleigekontor{
+public class Kontor {
     private static final AtomicInteger teller = new AtomicInteger(0);
     private int kontornummer;
     private Adresse adresse;
@@ -15,11 +15,11 @@ public class Utleigekontor{
     private List<Bil> biler;
 
     /**
-     * Constructor Utleigekontor
+     * Constructor Kontor
      * @param adresse
      * @param telefon
      */
-    public Utleigekontor(Adresse adresse, long telefon) {
+    public Kontor(Adresse adresse, long telefon) {
         kontornummer = teller.incrementAndGet();
         this.adresse = adresse;
         this.telefon = telefon;
@@ -50,10 +50,12 @@ public class Utleigekontor{
     }
 
     /**
-     * utleie - Fjerner bil fra liste over biler
-     * @param bil
+     * toString()
+     * @return string
      */
-    public void utleige(Bil bil){
-        this.biler.remove(bil);
+    @Override
+    public String toString(){
+        return ("Kontornr: " + kontornummer + "\n" + telefon + "\n" + adresse.toString());
     }
+
 }

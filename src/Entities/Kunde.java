@@ -23,12 +23,14 @@ public class Kunde {
      * @param etternavn
      * @param adresse
      * @param telefon
+     * @param kortnummer
      */
-    public Kunde(String fornavn, String etternavn, Adresse adresse, long telefon) {
+    public Kunde(String fornavn, String etternavn, Adresse adresse, long telefon, long kortnummer) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.adresse = adresse;
         this.telefon = telefon;
+        this.kortnummer = kortnummer;
     }
 
     /**
@@ -44,6 +46,10 @@ public class Kunde {
         return this.faktura;
     }
 
+    /**
+     * toString()
+     * @return string
+     */
     @Override
     public String toString(){
         return (fornavn + " " + etternavn + "\n" +  telefon + "\n" + adresse.toString());

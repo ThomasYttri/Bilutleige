@@ -12,9 +12,9 @@ public class Bil {
     private String farge;
     private String klasse;
     private String regnr;
-    private Utleigekontor lokasjon;
-    private boolean ledig;
+    private Kontor lokasjon;
     private int dagspris;
+    private int kmstand;
 
     /**
      * Constructor Bil
@@ -25,7 +25,7 @@ public class Bil {
      * @param regnr
      * @param lokasjon
      */
-    public Bil(String bilMerke, String modell, String farge, String klasse, String regnr, Utleigekontor lokasjon, int dagspris) {
+    public Bil(String bilMerke, String modell, String farge, String klasse, String regnr, Kontor lokasjon, int dagspris, int kmstand) {
         this.bilMerke = bilMerke;
         this.modell = modell;
         this.farge = farge;
@@ -33,13 +33,13 @@ public class Bil {
         this.regnr = regnr;
         this.lokasjon = lokasjon;
         this.dagspris = dagspris;
+        this.kmstand = kmstand;
     }
 
     /**
      * Getter & Setter
      *
      */
-
     public String getRegnr() {
         return regnr;
     }
@@ -48,9 +48,12 @@ public class Bil {
         return dagspris;
     }
 
-    @Override
-    public String toString(){
-        return ("Bil: " + bilMerke + " " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
+    public String getKlasse() {
+        return klasse;
+    }
+
+    public void setKmstand(int kmstand){
+        this.kmstand = kmstand;
     }
 
     /**
@@ -71,4 +74,12 @@ public class Bil {
         return true;
     }
 
+    /**
+     * toString()
+     * @return string
+     */
+    @Override
+    public String toString(){
+        return ("Bil: " + bilMerke + " " + modell + " " + "Farge: " + farge + " " + "Klasse: " + klasse + " " + "Regnr: " + regnr + " " + "Dagspris: " + dagspris);
+    }
 }

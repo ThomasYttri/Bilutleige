@@ -22,7 +22,6 @@ public class Adresse {
 
     /**
      * Getters and Setters
-     *
      */
     public String getGateadresse() {
         return gateadresse;
@@ -48,6 +47,10 @@ public class Adresse {
         this.poststed = poststed;
     }
 
+    /**
+     * toString()
+     * @return string
+     */
     @Override
     public String toString(){
         return (gateadresse + "\n" + postnummer + " " + poststed);

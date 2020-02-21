@@ -1,23 +1,32 @@
 package Entities;
 
+import Controller.BilutleigeKontroller;
+
 /**
  * @Author Thomas V.Yttri
  */
 public class Faktura {
     private Leigeforhold leigeforhold;
-    private Bilutleigeselskap bilutleigeselskap;
+    private String str;
 
-    public Faktura (Leigeforhold leigeforhold, Bilutleigeselskap bilutleigeselskap) {
+    /**
+     * Faktura Consturctor
+     * @param leigeforhold
+     * @param str
+     */
+    public Faktura (Leigeforhold leigeforhold, String str) {
         this.leigeforhold = leigeforhold;
-        this.bilutleigeselskap = bilutleigeselskap;
+        this.str = str;
     }
 
-    public void printFaktura() {
-        System.out.println("******** FAKTURA ********" + "\n");
-        System.out.println("Betalt av:" + "\n" + leigeforhold.getKunde().toString());
-        System.out.println("\n" + "__________________________" + "\n");
-        System.out.println("Betalt til:" + "\n" + bilutleigeselskap.toString());
-        System.out.println("\n" + "__________________________" + "\n");
-        System.out.println("SUM Å BETALE " + leigeforhold.getPris());
+    /**
+     * toString()
+     * @return string
+     */
+    @Override
+    public String toString() {
+        return ("******** FAKTURA ********" + "\n" + "\n" + "Betalt av:" + "\n" + leigeforhold.getKunde().toString() +
+                "\n" + "\n" + "__________________________" + "\n" + "Betalt til:" + "\n" + str +
+                "\n" + "\n" + "__________________________" + "\n" + "SUM Å BETALE " + leigeforhold.getPris() + "\n");
     }
 }

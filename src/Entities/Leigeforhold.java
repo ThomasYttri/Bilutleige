@@ -13,19 +13,13 @@ public class Leigeforhold {
     private int varighet;
     private LocalDate start;
     private LocalDate slutt;
-    private Utleigekontor leigekontor;
-    private Utleigekontor returkontor;
+    private Kontor leigekontor;
+    private Kontor returkontor;
     private Kunde kunde;
     private Bil bil;
     private static final AtomicInteger teller = new AtomicInteger(1000);
     private int ordrenr;
 
-    /**
-     * Constructor Leigeforhold - Empty
-     */
-    public Leigeforhold(){
-        this.ordrenr = teller.incrementAndGet();
-    }
     /**
      * Constructor Leigeforhold
      * @param start
@@ -35,7 +29,7 @@ public class Leigeforhold {
      * @param kunde
      * @param bil
      */
-    public Leigeforhold(LocalDate start, LocalDate slutt, Utleigekontor leigekontor, Utleigekontor returkontor, Kunde kunde, Bil bil) {
+    public Leigeforhold(LocalDate start, LocalDate slutt, Kontor leigekontor, Kontor returkontor, Kunde kunde, Bil bil) {
         this.start = start;
         this.slutt = slutt;
         this.leigekontor = leigekontor;
@@ -51,76 +45,28 @@ public class Leigeforhold {
         return pris;
     }
 
-    public void setPris(int pris) {
-        this.pris = pris;
-    }
-
-    public int getVarighet() {
-        return varighet;
-    }
-
-    public void setVarighet(int varighet) {
-        this.varighet = varighet;
-    }
-
     public LocalDate getStart() {
         return start;
-    }
-
-    public void setStart(LocalDate start) {
-        this.start = start;
     }
 
     public LocalDate getSlutt() {
         return slutt;
     }
 
-    public void setSlutt(LocalDate slutt) {
-        this.slutt = slutt;
-    }
-
-    public Utleigekontor getLeigekontor() {
-        return leigekontor;
-    }
-
-    public void setLeigekontor(Utleigekontor leigekontor) {
-        this.leigekontor = leigekontor;
-    }
-
-    public Utleigekontor getReturkontor() {
+    public Kontor getReturkontor() {
         return returkontor;
-    }
-
-    public void setReturkontor(Utleigekontor returkontor) {
-        this.returkontor = returkontor;
     }
 
     public Kunde getKunde() {
         return kunde;
     }
 
-    public void setKunde(Kunde kunde) {
-        this.kunde = kunde;
-    }
-
     public Bil getBil() {
         return bil;
     }
 
-    public void setBil(Bil bil) {
-        this.bil = bil;
-    }
-
-    public static AtomicInteger getTeller() {
-        return teller;
-    }
-
     public int getOrdrenr() {
         return ordrenr;
-    }
-
-    public void setOrdrenr(int ordrenr) {
-        this.ordrenr = ordrenr;
     }
 
     /**
@@ -143,12 +89,5 @@ public class Leigeforhold {
             pris += AVGIFT;
         }
         return pris;
-    }
-
-    public boolean sjekkDato(LocalDate startdato, LocalDate sluttdato) {
-        if (startdato.isBefore(sluttdato) && startdato.isAfter(LocalDate.now())){
-            return true;
-        }
-        return false;
     }
 }
