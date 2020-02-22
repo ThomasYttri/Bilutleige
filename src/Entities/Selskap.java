@@ -167,7 +167,7 @@ public class Selskap {
 
     public void returBil(Leigeforhold leigeforhold, int kmstand){
         leigeforhold.getBil().setKmstand(kmstand);
-        leigeforhold.getReturkontor().retur(leigeforhold.getBil());
+        leigeforhold.getReturkontor().leggTilBil(leigeforhold.getBil());
         leigeforhold.getKunde().getFaktura().toString();
         leigeforholdListe.remove(leigeforhold);
     }

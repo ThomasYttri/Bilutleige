@@ -42,15 +42,15 @@ public class BilutleigeKontroller {
 
         //LEGG TIL STANDARD SETT MED BILER TIL ALLE KONTOR
         for(Kontor kontor : selskap.getKontor()) {
-            kontor.retur(new Bil("Toyota", "Yaris", "Blå", "A", "AB11111", kontor, 500, 100));
-            kontor.retur(new Bil("Hyundai", "i10", "Svart", "A", "AB11112", kontor, 500, 100));
-            kontor.retur(new Bil("Volkswagen", "Golf", "Grå", "B", "AB11113", kontor, 1250, 100));
-            kontor.retur(new Bil("Toyota", "Auris", "Grønn", "B", "AB11114", kontor, 1250, 100));
-            kontor.retur(new Bil("Volvo", "V40", "Blå", "C", "AB11115", kontor, 1750, 100));
-            kontor.retur(new Bil("Tesla", "Model 3", "Svart", "C", "AB11116", kontor, 1750, 100));
-            kontor.retur(new Bil("Volvo", "XC60", "Svart", "C", "AB11117", kontor, 1750, 100));
-            kontor.retur(new Bil("Audi", "R8", "Grå", "D", "AB11118", kontor, 3500, 20));
-            kontor.retur(new Bil("Lamborghini", "Aventador", "Rød", "D", "AB11119", kontor, 3500, 20));
+            kontor.leggTilBil(new Bil("Toyota", "Yaris", "Blå", "A", "AB11111", kontor, 500, 100));
+            kontor.leggTilBil(new Bil("Hyundai", "i10", "Svart", "A", "AB11112", kontor, 500, 100));
+            kontor.leggTilBil(new Bil("Volkswagen", "Golf", "Grå", "B", "AB11113", kontor, 1250, 100));
+            kontor.leggTilBil(new Bil("Toyota", "Auris", "Grønn", "B", "AB11114", kontor, 1250, 100));
+            kontor.leggTilBil(new Bil("Volvo", "V40", "Blå", "C", "AB11115", kontor, 1750, 100));
+            kontor.leggTilBil(new Bil("Tesla", "Model 3", "Svart", "C", "AB11116", kontor, 1750, 100));
+            kontor.leggTilBil(new Bil("Volvo", "XC60", "Svart", "C", "AB11117", kontor, 1750, 100));
+            kontor.leggTilBil(new Bil("Audi", "R8", "Grå", "D", "AB11118", kontor, 3500, 20));
+            kontor.leggTilBil(new Bil("Lamborghini", "Aventador", "Rød", "D", "AB11119", kontor, 3500, 20));
         }
     }
 }

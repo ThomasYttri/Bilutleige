@@ -23,28 +23,8 @@ public class Adresse {
     /**
      * Getters and Setters
      */
-    public String getGateadresse() {
-        return gateadresse;
-    }
-
-    public void setGateadresse(String gateadresse) {
-        this.gateadresse = gateadresse;
-    }
-
-    public int getPostnummer() {
-        return postnummer;
-    }
-
-    public void setPostnummer(int postnummer) {
-        this.postnummer = postnummer;
-    }
-
     public String getPoststed() {
         return poststed;
-    }
-
-    public void setPoststed(String poststed) {
-        this.poststed = poststed;
     }
 
     /**

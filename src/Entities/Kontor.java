@@ -29,10 +29,6 @@ public class Kontor {
     /**
      * Getters og Setters
      */
-    public int getKontornummer() {
-        return kontornummer;
-    }
-
     public Adresse getAdresse() {
         return adresse;
     }
@@ -45,7 +41,7 @@ public class Kontor {
      * retur - Legger bil til i liste over biler
      * @param bil
      */
-    public void retur(Bil bil){
+    public void leggTilBil(Bil bil){
         this.biler.add(bil);
     }
 
