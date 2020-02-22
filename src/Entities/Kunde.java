@@ -12,12 +12,6 @@ public class Kunde {
     private Long kortnummer;
 
     /**
-     * Constructor Kunde Empty
-     */
-    public Kunde() {
-    }
-
-    /**
      * Constructor Kunde
      * @param fornavn
      * @param etternavn
