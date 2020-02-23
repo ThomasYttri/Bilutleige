@@ -14,6 +14,7 @@ public class Selskap {
     private Adresse firmaAdresse;
     private List<Kontor> kontorListe;
     private List<Leigeforhold> leigeforholdListe;
+    private long kontonummer;
 
     /**
      * Constructor Selskap
@@ -21,12 +22,13 @@ public class Selskap {
      * @param telefon
      * @param firmaAdresse
      */
-    public Selskap(String navn, long telefon, Adresse firmaAdresse) {
+    public Selskap(String navn, long telefon, Adresse firmaAdresse, long kontonummer) {
         this.navn = navn;
         this.telefon = telefon;
         this.firmaAdresse = firmaAdresse;
         this.kontorListe = new ArrayList<>();
         this.leigeforholdListe = new ArrayList<>();
+        this.kontonummer = kontonummer;
     }
 
     /**
@@ -50,6 +52,7 @@ public class Selskap {
      */
     public void leigBil() {
         System.out.println("********************** Velkommen til " + this.navn + " **********************");
+        Kunde kunde = new Kunde();
         Scanner scanner = new Scanner(System.in);
 
         //Velge kontor
@@ -116,61 +119,34 @@ public class Selskap {
             leigebil = bilByReg(ledigeBiler, regnr);
         }
 
-        //Kunde
-        //Fornavn
-        System.out.println("Skriv ditt fornavn");
-        String fornavn = scanner.next();
-
-        //Etternavn
-        System.out.println("Skriv ditt etternavn");
-        String etternavn = scanner.next();
-
-        //Telefonnummer
-        System.out.println("Skriv ditt telefonnummer");
-        long nr = scanner.nextLong();
-
-        //Adresse
-        System.out.println("Skriv din addresse");
-
-        System.out.println("Gateaddresse:");
-        String gate = scanner.next();
-
-        System.out.println("Postnummer:");
-        int postnr = scanner.nextInt();
-        while ((int)(Math.log10(postnr) + 1) != 4) {
-            System.out.println("Postnummer må bestå av fire siffer.");
-            postnr = scanner.nextInt();
-        }
-
-        System.out.println("Poststed: ");
-        String poststed = scanner.next();
-        while (poststed == null){
-            System.out.println("Ugyldig poststed, prøv på nytt");
-            poststed = scanner.next();
-        }
-
-        Adresse adresse = new Adresse(gate, postnr, poststed);
-
-        //Kortnummer
-        System.out.println("Kortnummer:");
-        long kortnummer = scanner.nextLong();
+        kunde = kunde.readKunde();
 
         //Opprette leigeforhold
-        Kunde kunde = new Kunde(fornavn, etternavn, adresse, nr, kortnummer);
         Leigeforhold leigeforhold = new Leigeforhold(startdato, sluttdato, startKontor, sluttKontor, kunde, leigebil);
+        //Legger leigeforhold til i lista for selskapet
         getLeigeforholdListe().add(leigeforhold);
+        //Legger faktura til kunden
         kunde.setFaktura(new Faktura(leigeforhold, toString()));
+
         System.out.println("Takk for din bestilling! Ditt referansenr er: " + leigeforhold.getOrdrenr());
+
+        //Printer faktura
         System.out.println("Din faktura: ");
-        kunde.getFaktura().toString();
+        System.out.println(kunde.getFaktura().toString());
     }
 
+    /**
+     * returBil - retunerer bilen til gitt returkontor, endrer kmstand og sletter leigeforholdet.
+     * @param leigeforhold
+     * @param kmstand
+     */
     public void returBil(Leigeforhold leigeforhold, int kmstand){
         leigeforhold.getBil().setKmstand(kmstand);
         leigeforhold.getReturkontor().leggTilBil(leigeforhold.getBil());
         leigeforhold.getKunde().getFaktura().toString();
         leigeforholdListe.remove(leigeforhold);
     }
+
     /**
      * kontorBy - Retunereer kontor med lik poststed, om ikkje finnes retuneres null
      * @return kontor
@@ -242,7 +218,7 @@ public class Selskap {
      */
     @Override
     public String toString(){
-        return (navn + "\n" + firmaAdresse + "\n" + telefon);
+        return (navn + "\n" + firmaAdresse + "\n" + "Tlf: " + telefon + "\n" + "Kontonummer: " + kontonummer);
     }
 
 }

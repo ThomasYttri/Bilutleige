@@ -1,7 +1,5 @@
 package Entities;
 
-import Controller.BilutleigeKontroller;
-
 /**
  * @Author Thomas V.Yttri
  */
@@ -25,8 +23,8 @@ public class Faktura {
      */
     @Override
     public String toString() {
-        return ("******** FAKTURA ********" + "\n" + "\n" + "Betalt av:" + "\n" + leigeforhold.getKunde().toString() +
-                "\n" + "\n" + "__________________________" + "\n" + "Betalt til:" + "\n" + str +
+        return ("******** FAKTURA ********" + "\n" + "\n" + "Betales av:" + "\n" + leigeforhold.getKunde().toString() +
+                "\n" + "\n" + "__________________________" + "\n" + "Betales til:" + "\n" + str +
                 "\n" + "\n" + "__________________________" + "\n" + "SUM Å BETALE " + leigeforhold.getPris() + "\n");
     }
 }

@@ -12,7 +12,7 @@ public class LeigeKontroller {
      * @param args
      */
     public static void main (String[] args) {
-        Selskap selskap = new Selskap("Car Rental Bergen", 12345678, new Adresse("Bilutleigevegen 5", 5050, "Bergen"));
+        Selskap selskap = new Selskap("Car Rental Bergen", 12345678, new Adresse("Bilutleigevegen 5", 5050, "Bergen"), 123456789);
         BilutleigeKontroller bilutleigeKontroller = new BilutleigeKontroller(selskap);
 
         bilutleigeKontroller.init();
